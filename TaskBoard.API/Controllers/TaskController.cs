@@ -6,5 +6,10 @@ namespace TaskBoard.API.Controllers
     [ApiController]
     public class TaskController : ControllerBase
     {
+        [HttpPost]
+        public IActionResult Create([FromBody] object request)
+        {
+            return Created();
+        }
     }
 }
