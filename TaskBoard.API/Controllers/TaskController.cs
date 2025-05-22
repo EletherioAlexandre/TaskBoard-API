@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TaskBoard.Application.UseCases.Task.Create;
+using TaskBoard.Communication.Requests;
+using TaskBoard.Communication.Responses;
 
 namespace TaskBoard.API.Controllers
 {
@@ -6,10 +9,18 @@ namespace TaskBoard.API.Controllers
     [ApiController]
     public class TaskController : ControllerBase
     {
-        [HttpPost]
-        public IActionResult Create([FromBody] object request)
+        private readonly CreateTaskUseCase _useCase;
+
+        public TaskController(CreateTaskUseCase useCase)
         {
-            return Created();
+            _useCase = useCase;
+        }
+        [HttpPost]
+        public IActionResult Create([FromBody] RequestCreateTaskJson request)
+        {
+            ResponseCreateTaskJson response = _useCase.Execute(request);
+
+            return Created(string.Empty, response);
         }
     }
 }

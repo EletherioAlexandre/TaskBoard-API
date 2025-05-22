@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TaskBoard.Application\TaskBoard.Application.csproj" />
     <ProjectReference Include="..\TaskBoard.Communication\TaskBoard.Communication.csproj" />
+    <ProjectReference Include="..\TaskBoard.Exception\TaskBoard.Exception.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,6 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace TaskBoard.Exception.ExceptionsBase
+﻿namespace TaskBoard.Exception.ExceptionsBase
 {
-    public class ErrorsOnValidationException : TaskException
+    public class ErrorsOnValidationException : TaskBaseException
     {
         public List<ApplicationErrorFields> Errors { get; set; }
 
